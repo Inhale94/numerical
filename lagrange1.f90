@@ -12,18 +12,18 @@ do i=1, m
 enddo
 
 do i=1, m*n
-  s=0.0
+  sum=0.0
     z(i)=a+(i-1)*d
     do j=1, m
-      p=1.0
+      pr=1.0
         do k=1, m
             if(j.ne.k) then
-                p=p*(z(i)-x(k))/(x(j)-x(k))
+                pr=pr*(z(i)-x(k))/(x(j)-x(k))
             endif
         enddo
-        s=s+y(j)*p
+        sum=sum+y(j)*pr
     enddo
-    write (10,*) z(i), s
+    write (10,*) z(i), sum
 enddo
 close (10)
 end
