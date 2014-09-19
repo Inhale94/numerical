@@ -1,8 +1,8 @@
 parameter(n = 100, m = 5)
 real x(n*m), y(n*m), z(n*m)
-open (10, FILE='lagrange.dat')
-a=-10.0
-b=10.0
+open (10, FILE='lagrange1.dat')
+a=-7.0
+b=7.0
 h=(b-a)/m
 d=h/n
 
