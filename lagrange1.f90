@@ -1,15 +1,18 @@
-parameter(n = 100, m = 5)
+parameter(n = 100, m = 50)
 real x(n*m), y(n*m), z(n*m)
 open (10, FILE='lagrange1.dat')
-a=-7.0
-b=7.0
+open (20, FILE='lagrange11.dat')
+a=-20.0
+b=20.0
 h=(b-a)/m
 d=h/n
 
-do i=1, m
+do i=1, m*n
     x(i)=a+(i-1)*h
-    y(i)=1/(x(i)**2+25)
+    y(i)=exp(sin(x(i)))
+write (20,*) x(i), y(i)
 enddo
+
 
 do i=1, m*n
   sum=0.0
@@ -26,4 +29,12 @@ do i=1, m*n
     write (10,*) z(i), sum
 enddo
 close (10)
+
+do i=1, m*n
+    x(i)=a+(i-1)*d
+    y(i)=exp(sin(x(i)))
+write (20,*) x(i), y(i)
+enddo
+close(20)
+
 end

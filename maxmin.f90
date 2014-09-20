@@ -1,29 +1,28 @@
-x=5
-y=5
-min=0
-max=0
+real*8 x,y
+x=1
+y=2
+k=0
+do while (x.ne.y)
+  x=x/10
+  y=y/10
+  k=k+1
+end  do
+ if (x.eq.y) then
+  write(*,*) "min poryadok=", -k
+end  if
 
-do while (1+x.gt.1)
-  x=x/2
-enddo
+x=1
+y=2
 
-if (1+x.eq.1) then
-  do while (x.lt.1)
-    x=x*10
-    min=min + 1
-  enddo
-endif
-write(*,*) 'min=', -min
+l=0
+do while (x.ne.y)
+  x=x*10
+  y=y*10
+  l=l+1
+end  do
+ if (x.eq.y) then
+  write(*,*) "max poryadok=", l
+end  if
 
-do while (1+y.gt.y)
-  y=y*2
-enddo
 
-if (1+y.eq.y) then
-  do while (y.gt.1)
-    y=y/10
-    max=max + 1
-  enddo
-endif
-write(*,*) 'max=', max
 end

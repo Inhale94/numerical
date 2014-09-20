@@ -1,3 +1,4 @@
+real*8 x
 x=1
 
 do while (1+x.gt.1)
